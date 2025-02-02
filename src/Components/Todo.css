@@ -6,23 +6,24 @@
     justify-content: center;
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;
     padding: 20px;
     background-color: #f4f7fa;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
+    margin: 50px auto;
 }
 
 /* Вхідне поле */
 .inputTodo input {
     width: 100%;
     padding: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Відстань між полем вводу і кнопкою */
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     outline: none;
+    box-sizing: border-box; /* Включає padding в розміри елемента */
     transition: all 0.3s ease;
 }
 
@@ -34,15 +35,17 @@
 
 /* Кнопка додавання */
 .inputTodo button {
-    padding: 12px 20px;
+    padding: 15px 18px;
     background-color: #6c63ff;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
+    letter-spacing: 1px;
+    box-sizing: border-box;
 }
 
 /* Кнопка в стані hover */
@@ -58,17 +61,57 @@
 /* Список справ */
 .inputTodo p {
     background-color: #ffffff;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 5px;
+    border-radius: 10px;
+    width: calc(100% - 40px); /* Зменшуємо ширину для кращого розміщення кнопки */
     font-size: 16px;
     color: #333;
     transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Вирівнюємо по центру */
+}
+
+/* Кнопка Delete */
+.deleteBtn {
+    padding: 10px 15px; /* Вирівнюємо по висоті з полем таски */
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Додаємо відстань між таскою та кнопкою */
+    box-sizing: border-box;
+}
+
+/* Кнопка в стані hover для Delete */
+.deleteBtn:hover {
+    background-color: #e65c5c;
+}
+
+/* Кнопка в стані активності для Delete */
+.deleteBtn:active {
+    background-color: #cc4d4d;
 }
 
 /* Ефект при наведенні на елемент списку */
 .inputTodo p:hover {
     background-color: #f1f1f1;
+}
+
+/* Контейнер для таски */
+.todoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f9f9;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 100%;
 }
