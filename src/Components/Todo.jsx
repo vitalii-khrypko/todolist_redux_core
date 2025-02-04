@@ -3,6 +3,7 @@ import "./Todo.css";
 import {addTodoActionCreator, deleteTodoActionCreator, newTodoTextActionCreator} from "../Redux/todoReducer";
 
 const Todo = (props) => {
+    console.log(props);
     let newTodoElement = React.createRef();
 
     const addTodo = () => {
@@ -15,7 +16,6 @@ const Todo = (props) => {
     }
 
     let todoElement = props.todos
-        .filter(todo => todo.todoText.trim() !== "")
         .map(todo =>
             <div key={todo.id} className="todoItem">
                 <p>{todo.todoText}</p>

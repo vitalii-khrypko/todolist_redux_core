@@ -4,7 +4,7 @@ const DELETE_TODO = "DELETE-TODO";
 
 let initialState = {
     todos: [
-        {id: 0, todoText: ""},
+        // {id: 0, todoText: ""},
     ],
     newTodoText: ""
 };
@@ -12,9 +12,8 @@ let initialState = {
 const todoReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_TODO:
-            const maxId = state.todos.reduce((max, todo) => Math.max(max, todo.id), 0);
             let newTodo = {
-                id: maxId + 1,
+                id: state.todos.length + 1,
                 todoText: state.newTodoText
             };
             return {
@@ -41,9 +40,7 @@ const todoReducer = (state = initialState, action) => {
 }
 
 
-export const addTodoActionCreator = () => (
-    { type: ADD_TODO }
-);
+export const addTodoActionCreator = () => ({ type: ADD_TODO });
 
 export const newTodoTextActionCreator = (text) => ({ type: NEW_TODO_TEXT, text });
 
